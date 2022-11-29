@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import {
   MediaRenderer,
@@ -24,47 +23,32 @@ const Home: NextPage = () => {
   return (
     <>
       {/* Content */}
-      <div className={styles.container}>
+      <div className={"flex flex-col items-center w-full"}>
         {/* Top Section */}
-        <h1 className={styles.h1}>NFT Marketplace w/ thirdweb + Next.JS</h1>
-        <p className={styles.explain}>
-          Build an NFT marketplace using{" "}
-          <b>
-            {" "}
-            <a
-              href="https://thirdweb.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.purple}
-            >
-              thirdweb
-            </a>
-          </b>{" "}
-          to list your ERC721 and ERC1155 tokens for auction or for direct sale.
-        </p>
+        <h1 className={"text-4xl font-bold uppercase tracking-[-3px]"}>Token Market</h1>
 
-        <hr className={styles.divider} />
+        <hr className={""} />
 
         <div style={{ marginTop: 32, marginBottom: 32 }}>
           <Link href="/create">
-            <a className={styles.mainButton} style={{ textDecoration: "none" }}>
+            <a className={"bg-purple-600 text-purple-50 p-2 px-6 rounded-lg border border-purple-300"} style={{ textDecoration: "none" }}>
               Create A Listing
             </a>
           </Link>
         </div>
 
-        <div className="main">
+        <main className="flex flex-col items-center w-full">
           {
             // If the listings are loading, show a loading message
             loadingListings ? (
               <div>Loading listings...</div>
             ) : (
               // Otherwise, show the listings
-              <div className={styles.listingGrid}>
+              <div className={""}>
                 {listings?.map((listing) => (
                   <div
                     key={listing.id}
-                    className={styles.listingShortView}
+                    className={""}
                     onClick={() => router.push(`/listing/${listing.id}`)}
                   >
                     <MediaRenderer
@@ -76,9 +60,9 @@ const Home: NextPage = () => {
                         height: "100%",
                       }}
                     />
-                    <h2 className={styles.nameContainer}>
+                    <h2 className={""}>
                       <Link href={`/listing/${listing.id}`}>
-                        <a className={styles.name}>{listing.asset.name}</a>
+                        <a className={""}>{listing.asset.name}</a>
                       </Link>
                     </h2>
 
@@ -91,7 +75,7 @@ const Home: NextPage = () => {
               </div>
             )
           }
-        </div>
+        </main>
       </div>
     </>
   );

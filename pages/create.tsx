@@ -10,7 +10,6 @@ import {
 } from "@thirdweb-dev/sdk";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import styles from "../styles/Home.module.css";
 
 const Create: NextPage = () => {
   // Next JS Router hook to redirect to other pages
@@ -64,7 +63,7 @@ const Create: NextPage = () => {
 
       // If the transaction succeeds, take the user back to the homepage to view their listing!
       if (transactionResult) {
-        router.push(`/`);
+        router.push("/");
       }
     } catch (error) {
       console.error(error);
@@ -118,24 +117,24 @@ const Create: NextPage = () => {
 
   return (
     <form onSubmit={(e) => handleCreateListing(e)}>
-      <div className={styles.container}>
+      <div className={""}>
         {/* Form Section */}
-        <div className={styles.collectionContainer}>
-          <h1 className={styles.ourCollection}>
+        <div className={""}>
+          <h1 className={""}>
             Upload your NFT to the marketplace:
           </h1>
 
           {/* Toggle between direct listing and auction listing */}
-          <div className={styles.listingTypeContainer}>
+          <div className={""}>
             <input
               type="radio"
               name="listingType"
               id="directListing"
               value="directListing"
               defaultChecked
-              className={styles.listingType}
+              className={""}
             />
-            <label htmlFor="directListing" className={styles.listingTypeLabel}>
+            <label htmlFor="directListing" className={""}>
               Direct Listing
             </label>
             <input
@@ -143,9 +142,9 @@ const Create: NextPage = () => {
               name="listingType"
               id="auctionListing"
               value="auctionListing"
-              className={styles.listingType}
+              className={""}
             />
-            <label htmlFor="auctionListing" className={styles.listingTypeLabel}>
+            <label htmlFor="auctionListing" className={""}>
               Auction Listing
             </label>
           </div>
@@ -154,7 +153,7 @@ const Create: NextPage = () => {
           <input
             type="text"
             name="contractAddress"
-            className={styles.textInput}
+            className={""}
             placeholder="NFT Contract Address"
           />
 
@@ -162,7 +161,7 @@ const Create: NextPage = () => {
           <input
             type="text"
             name="tokenId"
-            className={styles.textInput}
+            className={""}
             placeholder="NFT Token ID"
           />
 
@@ -170,13 +169,13 @@ const Create: NextPage = () => {
           <input
             type="text"
             name="price"
-            className={styles.textInput}
+            className={""}
             placeholder="Sale Price"
           />
 
           <button
             type="submit"
-            className={styles.mainButton}
+            className={""}
             style={{ marginTop: 32, borderStyle: "none" }}
           >
             List NFT
