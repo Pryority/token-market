@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   const { contract: marketplace } = useContract(
-    "0x277C0FB19FeD09c785448B8d3a80a78e7A9B8952", // Your marketplace contract address here
+    "0x9e75a9c129eca8fa5c057625e8c8c6155adfb469", // Your marketplace contract address here
     "marketplace"
   );
 
@@ -37,43 +37,7 @@ const Home: NextPage = () => {
         </div>
 
         <main className="flex flex-col items-center w-full">
-          {
-            // If the listings are loading, show a loading message
-            loadingListings ? (
-              <div>Loading listings...</div>
-            ) : (
-              // Otherwise, show the listings
-              <div className={""}>
-                {listings?.map((listing) => (
-                  <div
-                    key={listing.id}
-                    className={""}
-                    onClick={() => router.push(`/listing/${listing.id}`)}
-                  >
-                    <MediaRenderer
-                      src={listing.asset.image}
-                      style={{
-                        borderRadius: 16,
-                        // Fit the image to the container
-                        width: "100%",
-                        height: "100%",
-                      }}
-                    />
-                    <h2 className={""}>
-                      <Link href={`/listing/${listing.id}`}>
-                        <a className={""}>{listing.asset.name}</a>
-                      </Link>
-                    </h2>
-
-                    <p>
-                      <b>{listing.buyoutCurrencyValuePerToken.displayValue}</b>{" "}
-                      {listing.buyoutCurrencyValuePerToken.symbol}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            )
-          }
+          <div>placeholder</div>
         </main>
       </div>
     </>

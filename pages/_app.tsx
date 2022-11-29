@@ -17,6 +17,7 @@ import {
 } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
+import Footer from "../components/Footer";
 
 // This is the chainId your dApp will work on.
 const activeChainId = ChainId.Goerli;
@@ -24,7 +25,7 @@ const activeChainId = ChainId.Goerli;
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.goerli, chain.polygon, chain.optimism, chain.arbitrum],
   [
-    alchemyProvider({ apiKey: `${process.env.ALCHEMY_ID}` }),
+    alchemyProvider({ apiKey: `${process.env.NEXT_PUBLIC_MAINNET_ALCHEMY_ID}` }),
     publicProvider()
   ]
 );
@@ -45,7 +46,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThirdwebProvider desiredChainId={activeChainId}>
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider chains={chains}>
-          
           <Head>
             <title>thirdweb Marketplace with Next.JS</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -61,7 +61,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </Head>
           <Header />
           <Component {...pageProps} />
-
+          <Footer/>
         </RainbowKitProvider>
       </WagmiConfig>
     </ThirdwebProvider>

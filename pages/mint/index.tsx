@@ -16,7 +16,7 @@ import { useMemo, useState } from "react";
 import { parseIneligibility } from "../../utils/parseIneligibility";
   
 // Put Your NFT Drop Contract address from the dashboard here
-const myNftDropContractAddress = "0x90E2dD8C48cA35534Dd70e3eC19B362cdf71981E";
+const myNftDropContractAddress = "0x5eaf1fc19be7ab246bbaf45dd20d83b2b4f40fe6";
   
 const Home: NextPage = () => {
   const { contract: nftDrop } = useContract(myNftDropContractAddress);
@@ -142,7 +142,7 @@ const Home: NextPage = () => {
     numberTotal,
   ]);
   
-  console.log("claimIneligibilityReasons", claimIneligibilityReasons.data);
+  // console.log("claimIneligibilityReasons", claimIneligibilityReasons?.data);
   
   const canClaim = useMemo(() => {
     return (
@@ -210,13 +210,13 @@ const Home: NextPage = () => {
   ]);
   
   return (
-    <div className={""}>
+    <div className={"flex flex-col items-center"}>
       <div className={""}>
         {isLoading ? (
-          <p>Loading...</p>
+          <p>Loading Mint Page...</p>
         ) : (
           <>
-            <div className={""}>
+            <div className={"text-black"}>
               {/* Title of your NFT Collection */}
               <h1>{contractMetadata?.name}</h1>
               {/* Description of your NFT Collection */}
@@ -225,7 +225,7 @@ const Home: NextPage = () => {
               </p>
             </div>
   
-            <div className={""}>
+            <div className={"text-black"}>
               {/* Image Preview of NFTs */}
               <img
                 className={""}
@@ -314,13 +314,6 @@ const Home: NextPage = () => {
           </>
         )}
       </div>
-      {/* Powered by thirdweb */}{" "}
-      <img
-        src="/logo.png"
-        alt="thirdweb Logo"
-        width={135}
-        className={""}
-      />
     </div>
   );
 };
