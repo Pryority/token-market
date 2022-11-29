@@ -139,13 +139,13 @@ const Create: NextPage = () => {
         <form onSubmit={(e) => handleCreateListing(e)}>
           <div className={"flex flex-col items-center justify-center h-[60vh]"}>
             {/* Form Section */}
-            <div className={"bg-stone-50 rounded flex flex-col items-center space-y-4 p-8 border"}>
-              <h1 className={"text-2xl"}>
+            <div className={"bg-stone-50 rounded flex flex-col items-center space-y-4 w-full p-2 md:p-8 border"}>
+              <h1 className={"text-lg md:text-2xl flex flex-wrap w-5/6 md:w-full text-center"}>
             What type of listing are you creating?
               </h1>
 
               {/* Toggle between direct listing and auction listing */}
-              <div className={"flex space-x-4"}>
+              <div className={"flex flex-col items-start md:items-center md:justify-center md:flex-row md:space-x-4"}>
                 <div className={"flex space-x-2"}>
                   <input
                     type="radio"

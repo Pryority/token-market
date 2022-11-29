@@ -24,20 +24,10 @@ const Home: NextPage = () => {
       {/* Content */}
       <div className={"flex flex-col items-center w-full"}>
         {/* Top Section */}
-        <h1 className={"text-4xl font-bold uppercase tracking-[-3px]"}>Token Market</h1>
+        <h1 className={"text-4xl font-bold uppercase text-center tracking-[-3px]"}>Token Market</h1>
 
-        <hr className={""} />
-
-        <div style={{ marginTop: 32, marginBottom: 32 }}>
-          <Link href="/create">
-            <a className={"bg-purple-600 text-purple-50 p-2 px-6 rounded-lg border border-purple-300"} style={{ textDecoration: "none" }}>
-              Create A Listing
-            </a>
-          </Link>
-        </div>
-
-        <main className="flex flex-col items-center w-full">
-          <div>placeholder</div>
+        <main className="flex flex-col items-center w-full text-center mx-auto">
+          <p className="w-4/5">A marketplace where to list NFTs for a fixed price or auction.</p>
         </main>
       </div>
     </>
